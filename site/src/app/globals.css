@@ -147,14 +147,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Navbar */
 .navbar {
   width: 100%;
-  padding: 24px 0 16px;
+  padding: 32px 0 20px;
   background: transparent;
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 100;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
 }
 
 .nav-wrap {

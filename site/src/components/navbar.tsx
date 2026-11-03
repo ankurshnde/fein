@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
@@ -19,58 +18,41 @@ export function Navbar() {
   return (
     <header className="navbar">
       <div className="wrap nav-wrap">
-        {/* Brand / Monogram */}
-        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <Link
+        {/* Brand / Top-left Title */}
+        <div style={{ display: "flex", alignItems: "baseline" }}>
+          <a
             href="/"
             style={{
               fontFamily: "var(--font-display)",
               fontSize: "1.45rem",
               fontWeight: 400,
               textDecoration: "none",
-              letterSpacing: "-0.02em",
+              letterSpacing: "-0.01em",
               color: "var(--foreground)",
               display: "flex",
               alignItems: "baseline",
-              gap: "8px",
+              gap: "6px",
             }}
           >
-            <span>FEIN</span>
-            <span
-              style={{
-                fontFamily: "var(--font-code)",
-                fontSize: "10px",
-                letterSpacing: "0.08em",
-                color: "var(--muted)",
-                textTransform: "uppercase",
-              }}
-            >
-              / fein.ankurshinde.com
-            </span>
-          </Link>
+            <span>FE!N.ankurshinde.com</span>
+          </a>
         </div>
 
-        {/* Navigation Links + Theme Switcher */}
-        <div className="nav-links">
-          <a href="#overview" className="nav-link">
-            Overview
-          </a>
-          <a href="#protocol" className="nav-link">
-            Protocol
-          </a>
-          <a href="#architecture" className="nav-link">
-            Architecture
-          </a>
-          <a href="#specs" className="nav-link">
-            Specs
-          </a>
+        {/* Minimal Navigation + Theme Switcher */}
+        <div className="nav-links" style={{ gap: "28px" }}>
           <a
-            href="https://github.com/ankurshnde/fein"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://ankurshinde.com"
+            target="_self"
             className="nav-link"
           >
-            GitHub ↗
+            Go to main site
+          </a>
+          <a
+            href="https://ankurshinde.com/#projects"
+            target="_self"
+            className="nav-link"
+          >
+            See other projects
           </a>
 
           {/* Blueprint / Vellum Theme Switch Toggle */}
