@@ -1,8 +1,11 @@
 {
   "name": "fein-monorepo",
   "private": true,
+  "workspaces": [
+    "site"
+  ],
   "scripts": {
-    "build": "npm run build --prefix site",
+    "build": "npm --prefix site install && npm run build --prefix site",
     "dev": "npm run dev --prefix site"
   }
 }
