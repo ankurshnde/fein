@@ -9,10 +9,10 @@ export default function Home() {
 
       <main
         style={{
-          minHeight: "calc(100vh - 120px)",
+          minHeight: "calc(100vh - 90px)",
           display: "flex",
           alignItems: "center",
-          padding: "48px 0 80px",
+          padding: "20px 0 40px",
         }}
       >
         <div className="wrap" style={{ width: "100%", maxWidth: "860px" }}>
