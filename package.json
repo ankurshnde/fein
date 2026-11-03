@@ -1,11 +1,8 @@
 {
-  "name": "fein-monorepo",
+  "name": "fein-root",
   "private": true,
-  "workspaces": [
-    "site"
-  ],
   "scripts": {
-    "build": "npm --prefix site install && npm run build --prefix site",
+    "build": "cd site && npm install && npm run build && node -e \"require('fs').cpSync('out', '../out', {recursive: true})\"",
     "dev": "npm run dev --prefix site"
   }
 }
