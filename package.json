@@ -1,0 +1,8 @@
+{
+  "name": "fein-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix site",
+    "dev": "npm run dev --prefix site"
+  }
+}

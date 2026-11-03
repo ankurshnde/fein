@@ -44,14 +44,14 @@ export default function Home() {
             }}
             title="Hover to reveal full form"
           >
-            {/* Short Form: FE!N.ankurshinde.com */}
+            {/* Short Form: FE!N */}
             <h1
               style={{
                 position: "absolute",
                 margin: 0,
-                fontSize: "clamp(2.4rem, 6vw, 4.6rem)",
-                lineHeight: "1.02",
-                letterSpacing: "-0.025em",
+                fontSize: "clamp(3.4rem, 8vw, 5.6rem)",
+                lineHeight: "1.0",
+                letterSpacing: "-0.03em",
                 fontWeight: 400,
                 opacity: isHovered ? 0 : 1,
                 transform: isHovered ? "translateY(-4px)" : "translateY(0)",
@@ -62,7 +62,7 @@ export default function Home() {
                 textAlign: "center",
               }}
             >
-              FE!N.ankurshinde.com
+              FE!N
             </h1>
 
             {/* Long Form (Hovered): Financial Enterprise Intelligence Network */}
