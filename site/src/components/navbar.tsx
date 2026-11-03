@@ -39,14 +39,7 @@ export function Navbar() {
         </div>
 
         {/* Minimal Navigation + Theme Switcher */}
-        <div className="nav-links" style={{ gap: "28px" }}>
-          <a
-            href="https://ankurshinde.com"
-            target="_self"
-            className="nav-link"
-          >
-            Go to main site
-          </a>
+        <div className="nav-links" style={{ gap: "24px" }}>
           <a
             href="https://ankurshinde.com/#projects"
             target="_self"
