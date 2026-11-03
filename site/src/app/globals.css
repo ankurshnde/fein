@@ -44,10 +44,6 @@
   --ring: #C7D8E8;
   --radius: 0px;
 
-  /* Blueprint Grid lines in light mode (warm vellum drafting paper) */
-  --grid-major: rgba(59, 63, 69, 0.04);
-  --grid-minor: rgba(59, 63, 69, 0.015);
-
   --font-display: var(--font-instrument-serif), serif;
   --font-body: var(--font-poppins), sans-serif;
   --font-code: var(--font-geist), monospace;
@@ -69,10 +65,6 @@
   --accent-foreground: #121417;
   --border: rgba(247, 247, 245, 0.22);
   --ring: #C7D8E8;
-
-  /* Blueprint Grid lines in dark mode (deep black technical blueprint) */
-  --grid-major: rgba(199, 216, 232, 0.06);
-  --grid-minor: rgba(199, 216, 232, 0.02);
 }
 
 @layer base {
@@ -94,16 +86,9 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Architectural drafting grid background */
+  /* Background */
   body {
-    background-image: 
-      linear-gradient(var(--grid-major) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
-      linear-gradient(var(--grid-minor) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px);
-    background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
-    background-position: -1px -1px;
-    background-attachment: fixed;
+    background-color: var(--background);
   }
 
   ::selection {
