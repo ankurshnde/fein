@@ -44,14 +44,14 @@ export default function Home() {
             }}
             title="Hover to reveal full form"
           >
-            {/* Short Form: FE!N */}
+            {/* Short Form: FE!N.ankurshinde.com */}
             <h1
               style={{
                 position: "absolute",
                 margin: 0,
-                fontSize: "clamp(3.4rem, 8vw, 5.6rem)",
-                lineHeight: "1.0",
-                letterSpacing: "-0.03em",
+                fontSize: "clamp(2.4rem, 6vw, 4.6rem)",
+                lineHeight: "1.02",
+                letterSpacing: "-0.025em",
                 fontWeight: 400,
                 opacity: isHovered ? 0 : 1,
                 transform: isHovered ? "translateY(-4px)" : "translateY(0)",
@@ -62,10 +62,10 @@ export default function Home() {
                 textAlign: "center",
               }}
             >
-              FE!N
+              FE!N.ankurshinde.com
             </h1>
 
-            {/* Expanded Full Form */}
+            {/* Long Form (Hovered): Financial Enterprise Intelligence Network */}
             <h1
               style={{
                 position: "absolute",
@@ -102,20 +102,13 @@ export default function Home() {
               marginRight: "auto",
             }}
           >
-            <strong
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              style={{ cursor: "pointer" }}
-              title="Financial Enterprise Intelligence Network"
-            >
-              FE!N
-            </strong>{" "}
-            is a proposed multi-agent infrastructure layer for coordinating wholesale cross-border
-            payments between financial institutions. It enables institution-controlled AI agents to
-            negotiate transaction terms, prepare machine-readable agreements, coordinate compliance
-            and liquidity checks, and orchestrate settlement workflows. Each institution retains
-            control over its data, policies, credentials, and payment authority, separating AI-driven
-            coordination from authorized financial execution.
+            <strong>FE!N</strong> is a proposed multi-agent infrastructure layer for
+            coordinating wholesale cross-border payments between financial institutions. It
+            enables institution-controlled AI agents to negotiate transaction terms, prepare
+            machine-readable agreements, coordinate compliance and liquidity checks, and
+            orchestrate settlement workflows. Each institution retains control over its data,
+            policies, credentials, and payment authority, separating AI-driven coordination
+            from authorized financial execution.
           </p>
 
           {/* Centered Action Button: Initial Repo */}

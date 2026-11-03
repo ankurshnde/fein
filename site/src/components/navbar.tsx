@@ -17,29 +17,9 @@ export function Navbar() {
 
   return (
     <header className="navbar">
-      <div className="wrap nav-wrap">
-        {/* Brand / Top-left Title */}
-        <div style={{ display: "flex", alignItems: "baseline" }}>
-          <a
-            href="/"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "1.45rem",
-              fontWeight: 400,
-              textDecoration: "none",
-              letterSpacing: "-0.01em",
-              color: "var(--foreground)",
-              display: "flex",
-              alignItems: "baseline",
-              gap: "6px",
-            }}
-          >
-            <span>FE!N.ankurshinde.com</span>
-          </a>
-        </div>
-
-        {/* Minimal Navigation + Theme Switcher */}
-        <div className="nav-links" style={{ gap: "24px" }}>
+      <div className="wrap nav-wrap" style={{ display: "flex", justifyContent: "flex-end" }}>
+        {/* Navigation Links + Theme Switcher */}
+        <div className="nav-links" style={{ gap: "24px", marginLeft: "auto" }}>
           <a
             href="https://ankurshinde.com/#projects"
             target="_self"
