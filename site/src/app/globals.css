@@ -208,38 +208,38 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-corner {
   position: absolute;
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
   pointer-events: none;
   z-index: 2;
 }
 
 .btn-corner.tl {
-  top: -2px;
-  left: -2px;
-  border-top: 1.5px solid var(--foreground);
-  border-left: 1.5px solid var(--foreground);
+  top: -5px;
+  left: -5px;
+  border-top: 1.2px solid var(--muted);
+  border-left: 1.2px solid var(--muted);
 }
 
 .btn-corner.tr {
-  top: -2px;
-  right: -2px;
-  border-top: 1.5px solid var(--foreground);
-  border-right: 1.5px solid var(--foreground);
+  top: -5px;
+  right: -5px;
+  border-top: 1.2px solid var(--muted);
+  border-right: 1.2px solid var(--muted);
 }
 
 .btn-corner.bl {
-  bottom: -2px;
-  left: -2px;
-  border-bottom: 1.5px solid var(--foreground);
-  border-left: 1.5px solid var(--foreground);
+  bottom: -5px;
+  left: -5px;
+  border-bottom: 1.2px solid var(--muted);
+  border-left: 1.2px solid var(--muted);
 }
 
 .btn-corner.br {
-  bottom: -2px;
-  right: -2px;
-  border-bottom: 1.5px solid var(--foreground);
-  border-right: 1.5px solid var(--foreground);
+  bottom: -5px;
+  right: -5px;
+  border-bottom: 1.2px solid var(--muted);
+  border-right: 1.2px solid var(--muted);
 }
 
 .btn {
@@ -247,23 +247,30 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: var(--font-code);
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  padding: 10px 24px;
   border: 1px solid var(--border);
-  background: transparent;
-  color: var(--foreground);
+  background: var(--background);
+  color: #1e5fa8;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.25s ease;
 }
 
+.dark .btn {
+  color: #c7d8e8;
+  background: transparent;
+  border-color: var(--border);
+}
+
 .btn:hover {
   background: var(--secondary);
-  border-color: var(--foreground);
   color: var(--foreground);
+  border-color: var(--border);
 }
 
 .btn-primary {

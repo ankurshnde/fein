@@ -1,8 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { Navbar } from "@/components/navbar";
 
 export default function Home() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <>
       <Navbar />
@@ -12,53 +15,74 @@ export default function Home() {
           minHeight: "calc(100vh - 90px)",
           display: "flex",
           alignItems: "center",
-          padding: "20px 0 40px",
+          padding: "24px 0 40px",
         }}
       >
         <div className="wrap" style={{ width: "100%", maxWidth: "860px" }}>
-          {/* Main Title */}
-          <h1
+          {/* Expandable Headline on Hover */}
+          <div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onClick={() => setIsHovered(!isHovered)}
             style={{
-              fontSize: "clamp(3.4rem, 8vw, 5.6rem)",
-              lineHeight: "1.02",
               marginBottom: "28px",
-              letterSpacing: "-0.03em",
-              fontWeight: 400,
+              cursor: "pointer",
+              display: "inline-block",
             }}
+            title="Hover to reveal full form"
           >
-            FE!N
-          </h1>
+            <h1
+              style={{
+                fontSize: isHovered
+                  ? "clamp(1.9rem, 4.3vw, 3.3rem)"
+                  : "clamp(3.4rem, 8vw, 5.6rem)",
+                lineHeight: "1.08",
+                letterSpacing: "-0.025em",
+                fontWeight: 400,
+                transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                userSelect: "none",
+                color: "var(--foreground)",
+              }}
+            >
+              {isHovered ? (
+                <span style={{ fontStyle: "italic" }}>
+                  Financial Enterprise Intelligence Network
+                </span>
+              ) : (
+                <span>FE!N</span>
+              )}
+            </h1>
+          </div>
 
-          {/* Description Paragraph */}
+          {/* Core Description Paragraph */}
           <p
             style={{
-              fontSize: "clamp(1.05rem, 1.8vw, 1.25rem)",
+              fontSize: "clamp(1.02rem, 1.75vw, 1.2rem)",
               lineHeight: "1.85",
               color: "var(--foreground)",
-              marginBottom: "44px",
+              marginBottom: "36px",
               fontWeight: 300,
             }}
           >
-            <strong>FE!N</strong> is a multi-agent coordination system for wholesale
-            cross-border payments, designed around institution-controlled AI agents.
-            Each agent represents a financial institution’s policies and interests,
-            coordinating with counterparty agents to negotiate transaction terms,
-            prepare machine-readable agreements, verify compliance, assess liquidity,
-            and coordinate settlement. Institutions retain control over their data,
-            credentials, and payment authority; AI-driven coordination does not replace
-            institutional authorization.
+            <strong
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              style={{ cursor: "pointer" }}
+              title="Financial Enterprise Intelligence Network"
+            >
+              FE!N
+            </strong>{" "}
+            is a multi-agent coordination system for wholesale cross-border payments,
+            designed around institution-controlled AI agents. Each agent represents a
+            financial institution’s policies and interests, coordinating with counterparty
+            agents to negotiate transaction terms, prepare machine-readable agreements,
+            verify compliance, assess liquidity, and coordinate settlement. Institutions
+            retain control over their data, credentials, and payment authority; AI-driven
+            coordination does not replace institutional authorization.
           </p>
 
-          {/* Action Row */}
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "18px",
-              alignItems: "center",
-            }}
-          >
-            {/* Button 1: Initial Repo */}
+          {/* Action: Initial Repo Button */}
+          <div>
             <div className="technical-btn-wrap">
               <div className="btn-corner tl" />
               <div className="btn-corner tr" />
@@ -68,46 +92,37 @@ export default function Home() {
                 href="https://github.com/ai-arxiv/fein"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
-                style={{ padding: "12px 24px" }}
+                className="btn"
               >
                 Initial Repo ↗
               </a>
             </div>
+          </div>
 
-            {/* Button 2: Upcoming v1 & Survey Paper */}
-            <div className="technical-btn-wrap">
-              <div className="btn-corner tl" />
-              <div className="btn-corner tr" />
-              <div className="btn-corner bl" />
-              <div className="btn-corner br" />
-              <div
-                className="btn"
-                style={{
-                  cursor: "default",
-                  textTransform: "none",
-                  fontSize: "13px",
-                  letterSpacing: "0.01em",
-                  padding: "12px 20px",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  color: "var(--foreground)",
-                }}
-              >
-                <span
-                  style={{
-                    width: "7px",
-                    height: "7px",
-                    backgroundColor: "#00d294",
-                    display: "inline-block",
-                  }}
-                />
-                <span>
-                  v1 will be released soon on the site w/ survey paper for peer review and further details
-                </span>
-              </div>
-            </div>
+          {/* Status Note: v1 release & survey paper (not a button) */}
+          <div
+            style={{
+              marginTop: "24px",
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              fontSize: "13px",
+              color: "var(--muted)",
+              lineHeight: "1.6",
+            }}
+          >
+            <span
+              style={{
+                width: "6px",
+                height: "6px",
+                backgroundColor: "#00d294",
+                display: "inline-block",
+                flexShrink: 0,
+              }}
+            />
+            <span>
+              v1 will be released soon on the site w/ survey paper for peer review and further details.
+            </span>
           </div>
         </div>
       </main>
