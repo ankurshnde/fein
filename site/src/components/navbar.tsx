@@ -21,11 +21,30 @@ export function Navbar() {
         {/* Navigation Links + Theme Switcher */}
         <div className="nav-links" style={{ gap: "24px", marginLeft: "auto" }}>
           <a
-            href="https://ankurshinde.com/#projects"
+            href="https://ankurshinde.com/projects"
             target="_self"
             className="nav-link"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+            }}
           >
-            See other projects
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{ display: "inline-block", flexShrink: 0 }}
+            >
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+            <span>Back</span>
           </a>
 
           {/* Blueprint / Vellum Theme Switch Toggle */}
