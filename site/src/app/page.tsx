@@ -15,11 +15,19 @@ export default function Home() {
           minHeight: "calc(100vh - 90px)",
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
           padding: "24px 0 40px",
         }}
       >
-        <div className="wrap" style={{ width: "100%", maxWidth: "860px" }}>
-          {/* Locked-height title container: zero layout shift on hover */}
+        <div
+          className="wrap"
+          style={{
+            width: "100%",
+            maxWidth: "840px",
+            textAlign: "center",
+          }}
+        >
+          {/* Centered locked-height title container: zero layout shift on hover */}
           <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -31,6 +39,7 @@ export default function Home() {
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
+              justifyContent: "center",
               userSelect: "none",
             }}
             title="Hover to reveal full form"
@@ -39,7 +48,6 @@ export default function Home() {
             <h1
               style={{
                 position: "absolute",
-                left: 0,
                 margin: 0,
                 fontSize: "clamp(3.4rem, 8vw, 5.6rem)",
                 lineHeight: "1.0",
@@ -51,6 +59,7 @@ export default function Home() {
                 transition: "opacity 0.25s ease, transform 0.25s ease",
                 color: "var(--foreground)",
                 whiteSpace: "nowrap",
+                textAlign: "center",
               }}
             >
               FE!N
@@ -60,7 +69,6 @@ export default function Home() {
             <h1
               style={{
                 position: "absolute",
-                left: 0,
                 margin: 0,
                 fontSize: "clamp(1.6rem, 3.4vw, 2.5rem)",
                 fontStyle: "italic",
@@ -73,13 +81,14 @@ export default function Home() {
                 transition: "opacity 0.25s ease, transform 0.25s ease",
                 color: "var(--foreground)",
                 maxWidth: "100%",
+                textAlign: "center",
               }}
             >
               Financial Enterprise Intelligence Network
             </h1>
           </div>
 
-          {/* Core Description Paragraph (position strictly preserved) */}
+          {/* Centered Core Description Paragraph */}
           <p
             style={{
               fontSize: "clamp(1.02rem, 1.75vw, 1.2rem)",
@@ -87,6 +96,10 @@ export default function Home() {
               color: "var(--foreground)",
               marginBottom: "36px",
               fontWeight: 300,
+              textAlign: "center",
+              maxWidth: "800px",
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
           >
             <strong
@@ -97,17 +110,16 @@ export default function Home() {
             >
               FE!N
             </strong>{" "}
-            is a multi-agent coordination system for wholesale cross-border payments,
-            designed around institution-controlled AI agents. Each agent represents a
-            financial institution’s policies and interests, coordinating with counterparty
-            agents to negotiate transaction terms, prepare machine-readable agreements,
-            verify compliance, assess liquidity, and coordinate settlement. Institutions
-            retain control over their data, credentials, and payment authority; AI-driven
-            coordination does not replace institutional authorization.
+            is a proposed multi-agent infrastructure layer for coordinating wholesale cross-border
+            payments between financial institutions. It enables institution-controlled AI agents to
+            negotiate transaction terms, prepare machine-readable agreements, coordinate compliance
+            and liquidity checks, and orchestrate settlement workflows. Each institution retains
+            control over its data, policies, credentials, and payment authority, separating AI-driven
+            coordination from authorized financial execution.
           </p>
 
-          {/* Action: Initial Repo Button */}
-          <div>
+          {/* Centered Action Button: Initial Repo */}
+          <div style={{ display: "flex", justifyContent: "center" }}>
             <div className="technical-btn-wrap">
               <div className="btn-corner tl" />
               <div className="btn-corner tr" />
@@ -124,16 +136,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Status Note: Palette-matched indicator dot */}
+          {/* Centered Status Note */}
           <div
             style={{
               marginTop: "24px",
               display: "flex",
               alignItems: "center",
+              justifyContent: "center",
               gap: "10px",
               fontSize: "13px",
               color: "var(--muted)",
               lineHeight: "1.6",
+              textAlign: "center",
             }}
           >
             <span className="status-indicator-dot" />
