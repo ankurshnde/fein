@@ -25,6 +25,13 @@ export const metadata: Metadata = {
       "A coordination protocol for bilateral commitment, cryptographic verification, and conditional settlement between sovereign enterprise AI agents.",
     creator: "@ankurshn",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
