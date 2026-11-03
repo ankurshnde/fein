@@ -19,42 +19,67 @@ export default function Home() {
         }}
       >
         <div className="wrap" style={{ width: "100%", maxWidth: "860px" }}>
-          {/* Expandable Headline on Hover */}
+          {/* Locked-height title container: zero layout shift on hover */}
           <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={() => setIsHovered(!isHovered)}
             style={{
-              marginBottom: "28px",
+              height: "84px",
+              marginBottom: "24px",
+              position: "relative",
               cursor: "pointer",
-              display: "inline-block",
+              display: "flex",
+              alignItems: "center",
+              userSelect: "none",
             }}
             title="Hover to reveal full form"
           >
+            {/* Short Form: FE!N */}
             <h1
               style={{
-                fontSize: isHovered
-                  ? "clamp(1.9rem, 4.3vw, 3.3rem)"
-                  : "clamp(3.4rem, 8vw, 5.6rem)",
-                lineHeight: "1.08",
-                letterSpacing: "-0.025em",
+                position: "absolute",
+                left: 0,
+                margin: 0,
+                fontSize: "clamp(3.4rem, 8vw, 5.6rem)",
+                lineHeight: "1.0",
+                letterSpacing: "-0.03em",
                 fontWeight: 400,
-                transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-                userSelect: "none",
+                opacity: isHovered ? 0 : 1,
+                transform: isHovered ? "translateY(-4px)" : "translateY(0)",
+                pointerEvents: isHovered ? "none" : "auto",
+                transition: "opacity 0.25s ease, transform 0.25s ease",
                 color: "var(--foreground)",
+                whiteSpace: "nowrap",
               }}
             >
-              {isHovered ? (
-                <span style={{ fontStyle: "italic" }}>
-                  Financial Enterprise Intelligence Network
-                </span>
-              ) : (
-                <span>FE!N</span>
-              )}
+              FE!N
+            </h1>
+
+            {/* Expanded Full Form */}
+            <h1
+              style={{
+                position: "absolute",
+                left: 0,
+                margin: 0,
+                fontSize: "clamp(1.6rem, 3.4vw, 2.5rem)",
+                fontStyle: "italic",
+                lineHeight: "1.15",
+                letterSpacing: "-0.02em",
+                fontWeight: 400,
+                opacity: isHovered ? 1 : 0,
+                transform: isHovered ? "translateY(0)" : "translateY(4px)",
+                pointerEvents: isHovered ? "auto" : "none",
+                transition: "opacity 0.25s ease, transform 0.25s ease",
+                color: "var(--foreground)",
+                maxWidth: "100%",
+              }}
+            >
+              Financial Enterprise Intelligence Network
             </h1>
           </div>
 
-          {/* Core Description Paragraph */}
+          {/* Core Description Paragraph (position strictly preserved) */}
           <p
             style={{
               fontSize: "clamp(1.02rem, 1.75vw, 1.2rem)",
@@ -99,7 +124,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Status Note: v1 release & survey paper (not a button) */}
+          {/* Status Note: Palette-matched indicator dot */}
           <div
             style={{
               marginTop: "24px",
@@ -111,15 +136,7 @@ export default function Home() {
               lineHeight: "1.6",
             }}
           >
-            <span
-              style={{
-                width: "6px",
-                height: "6px",
-                backgroundColor: "#00d294",
-                display: "inline-block",
-                flexShrink: 0,
-              }}
-            />
+            <span className="status-indicator-dot" />
             <span>
               v1 will be released soon on the site w/ survey paper for peer review and further details.
             </span>

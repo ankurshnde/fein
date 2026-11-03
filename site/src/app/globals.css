@@ -217,29 +217,39 @@ h1, h2, h3, h4, h5, h6 {
 .btn-corner.tl {
   top: -5px;
   left: -5px;
-  border-top: 1.2px solid var(--muted);
-  border-left: 1.2px solid var(--muted);
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
 
 .btn-corner.tr {
   top: -5px;
   right: -5px;
-  border-top: 1.2px solid var(--muted);
-  border-right: 1.2px solid var(--muted);
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
 }
 
 .btn-corner.bl {
   bottom: -5px;
   left: -5px;
-  border-bottom: 1.2px solid var(--muted);
-  border-left: 1.2px solid var(--muted);
+  border-bottom: 1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
 
 .btn-corner.br {
   bottom: -5px;
   right: -5px;
-  border-bottom: 1.2px solid var(--muted);
-  border-right: 1.2px solid var(--muted);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+.status-indicator-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--muted);
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 0;
+  transition: background-color 0.25s ease;
 }
 
 .btn {
